@@ -1,6 +1,55 @@
-# mac-win-alttab-
-mac上实现window操作习惯的软件，两个功能，alttab切换和鼠标反转+平滑滚动。
+# SwitchScroll
 
-之前一直是通过mos和alttab两个软件来实现的，体验非常棒。最近第一次尝试用codex，完全没有编程经验，所以像找个项目试一试，就想把这两个软件的功能合并成一个，由此有了这个小软件。
+SwitchScroll is a small macOS menu bar utility for personal window and scroll workflows.
 
-重点！我按照自己的键位来设置的快捷键来实现alttab。软件默认用control+tab来切换窗口。键位是把command和control按钮互换了。同时我把FN也设置成了command。实际使用下来体验挺好。所以如果你使用这个软件，一定要至少把command和control或者fn互换。
+## Features
+
+- Reverse mouse wheel scrolling
+- Simple smooth scrolling
+- Control+Tab window switcher
+- Window thumbnails in the switcher overlay
+- Lightweight recent-window ordering
+- Native AppKit menu bar app
+
+## Download
+
+Download the latest DMG from the GitHub Releases page.
+
+Open the DMG, then drag `SwitchScroll.app` into `Applications`.
+
+The public DMG is ad-hoc signed for privacy, so it does not expose a personal Apple Developer certificate. Because it is not Developer ID signed or notarized, macOS may show a Gatekeeper warning the first time you open it. If you trust the source, open it from Finder with Control-click or right-click, then choose Open.
+
+## Permissions
+
+SwitchScroll needs these macOS permissions:
+
+- Accessibility: required for scroll handling and window activation
+- Screen Recording: optional for window thumbnails
+
+If thumbnails are unavailable, the window switcher still works without them.
+
+## Privacy
+
+SwitchScroll is local-only:
+
+- No networking
+- No analytics
+- No auto-update
+- No telemetry
+- No upload of window titles, screenshots, scroll events, or app usage
+
+Screen Recording permission is used only to capture local window thumbnails for the switcher overlay.
+
+## Build
+
+Open `SwitchScroll.xcodeproj` in Xcode and select your own signing team if needed.
+
+Command-line build:
+
+```sh
+xcodebuild -project SwitchScroll.xcodeproj -scheme SwitchScroll -configuration Debug build
+```
+
+## Notes
+
+This project is not intended for App Store distribution. Release builds may need to be signed or notarized again on your own machine if you redistribute them broadly.

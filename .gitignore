@@ -1,0 +1,27 @@
+.DS_Store
+
+# Xcode user state and local build products
+xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+build/
+DerivedData/
+*.xcarchive
+*.dSYM
+
+# Release binaries belong in GitHub Releases, not Git history.
+release/
+*.dmg
+*.zip
+
+# Local logs and temporary files
+*.log
+*.tmp
+*.bak
+*.old
+
+# Signing/provisioning material
+*.p12
+*.cer
+*.mobileprovision
+*.provisionprofile
